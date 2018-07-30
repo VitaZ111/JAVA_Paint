@@ -3,30 +3,13 @@ package control;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Point;
-import java.awt.event.ContainerEvent;
-import java.awt.event.ContainerListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
 import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowFocusListener;
-import java.awt.event.WindowListener;
-
-import javax.swing.JComponent;
 import javax.swing.JFrame;
-
-import shapes.Line;
-import shapes.Shape;
 import window.Buttonpanel;
 import window.PicPanel;
-import window.PicsPanel;
 
 
 public class Start implements MouseListener,MouseMotionListener {
@@ -37,7 +20,6 @@ public class Start implements MouseListener,MouseMotionListener {
 	private JFrame frame=new JFrame();
 	private PicPanel picpanel;
 	private Buttonpanel butspanel;
-	private JComponent preowner;
 	
 	public Start(int width,int height,String title) {
 		this.width=width;
@@ -81,7 +63,6 @@ public class Start implements MouseListener,MouseMotionListener {
 	}
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		Shape s;
 		System.out.println("released");
 		// remove temp
 		picpanel.removeTempPic();
@@ -96,7 +77,6 @@ public class Start implements MouseListener,MouseMotionListener {
 	@Override
 	public void mouseExited(MouseEvent e) {}
 
-	
 	public static void main(String[] args) {
 		new Start(800,600,"Mini-CAD");
 	}

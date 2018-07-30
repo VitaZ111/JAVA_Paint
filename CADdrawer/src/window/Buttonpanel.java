@@ -1,7 +1,5 @@
 package window;
 
-
-
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -9,27 +7,17 @@ import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.util.ArrayList;
-
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
-import javax.swing.border.LineBorder;
-
-import shapes.Circle;
-import shapes.Line;
-import shapes.Rectangle;
 import shapes.Shape;
-import shapes.Words;
 
 public class Buttonpanel extends JPanel{
 	private static final long serialVersionUID = 1L;
 	private ArrayList<JButton> buttons=new ArrayList<JButton>();
 	private ArrayList<JButton> colorbuts=new ArrayList<JButton>();
-	private boolean colorchange=false;
 	private String shapename;  
 	private Color color;
 	private Shape lastShape;
@@ -58,7 +46,6 @@ public class Buttonpanel extends JPanel{
 			but.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					colorchange=false;
 					shapename=but.getText();
 					System.out.println("but:"+shapename+" pressed");
 					if(shapename.equals("Help")) {
@@ -76,7 +63,6 @@ public class Buttonpanel extends JPanel{
 			but.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					colorchange=true;
 					shapename=null;
 					color=but.getBackground();
 					System.out.println("color:"+color+"choosed");
